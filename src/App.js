@@ -6,6 +6,7 @@ import './App.css'
 import { useState, useEffect } from 'react'
 import uuidv4 from 'uuidv4/build/lib/uuidv4'
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
+import Details from './components/Details'
 
 function App() {
   
@@ -43,6 +44,7 @@ function App() {
       <Routes>
         <Route path='/' element={<ContactList contacts={contacts} getContactId={removeContactHandler} />}></Route>
         <Route path='/add' element={<AddContact addContactHandler={addContactHandler} />}></Route>
+        <Route path='/contact/:id' element={<Details />}></Route>
       </Routes>
 
 

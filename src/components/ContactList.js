@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom'
 
 function ContactList(props) {   
 
+        // const {name,email} = props.location.state.contact
+
 
     const deleteContactHandler = (id)=>{
 
@@ -14,8 +16,11 @@ function ContactList(props) {
     }
     
     const renderContactList = props.contacts.map((contact)=>{
+        console.log(contact)
         return(
-            <ContactCard clickHandler={deleteContactHandler} contact={contact} key={contact.id}/>
+            <Link to={'contact/' + contact.id} >            
+                <ContactCard clickHandler={deleteContactHandler} contact={contact} key={contact.id}/>
+            </Link>
         )
     })
 
