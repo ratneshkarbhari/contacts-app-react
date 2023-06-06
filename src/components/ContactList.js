@@ -2,6 +2,7 @@
 import React,{userState,useEffect, useState} from 'react'
 
 import ContactCard from './ContactCard'
+import { Link } from 'react-router-dom'
 
 function ContactList(props) {   
 
@@ -19,7 +20,9 @@ function ContactList(props) {
     })
 
     return(
-        <div className='ui celled list'>
+        <div className='ui celled list' style={{marginTop:"5em"}}>
+            <h1>Contact List</h1>
+            <Link to='/add'>Add Contacts</Link>
             {renderContactList}
         </div>
     )
